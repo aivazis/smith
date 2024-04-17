@@ -1,0 +1,140 @@
+# -*- graphql -*-
+#
+# michael a.g. aïvázis <michael.aivazis@para-sim.com>
+# (c) 1998-2024 all rights reserved
+
+
+# top level
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+
+# queries
+type Query {
+    # placeholder
+    project: [Component]!
+}
+
+# mutations
+type Mutation {
+    # component
+    componentCreate(name: String!, family: String): Component!
+}
+
+
+# types
+type Component implements Node & Class {
+    # id
+    id: ID!
+    # spec
+    name: String!
+    bases: [Class!]
+    family: String
+    implements: [Protocol!]
+    # the docstring
+    docstring: [String!]!
+    # user configurable state
+    traits: [Trait!]!
+    # implementation obligations
+    exports: [Method!]!
+    # regular attributes
+    classAttributes: [Attribute!]!
+    instanceAttributes: [Attribute!]!
+    # regular methods
+    methods: [Method!]!
+    # python special functions
+    special: [Method!]!
+    # pyre framework hooks
+    hooks: [Method!]!
+}
+
+type Protocol implements Node & Class {
+    # id
+    id: ID!
+    # spec
+    name: String!
+    bases: [Class!]
+    family: String
+    # the docstring
+    docstring: [String!]!
+    # user configurable state
+    traits: [Trait!]!
+    # implementation obligations
+    provides: [Method!]!
+    # pyre framework hooks
+    hooks: [Method!]!
+}
+
+type Trait implements Node {
+    # the id
+    id: ID!
+    #
+    name: String!
+    aliases: [String!]!
+    type: Type!
+    default: String
+    #
+    constraints: [String!]
+    normalizers: [String!]
+    validators: [String!]
+    # the docstring
+    docstring: [String!]!
+}
+
+type Attribute implements Node {
+    # the id
+    id: ID!
+    #
+    name: String!
+    type: Type!
+    default: String
+}
+
+type Method implements Node {
+    # id
+    id: ID!
+    #
+    name: String!
+    argv: [Arg!]!
+    type: Type
+    #
+    args: Boolean
+    kwds: Boolean
+}
+
+type Arg implements Node {
+    # id
+    id: ID!
+    #
+    name: String!
+    type: Type
+    default: String
+}
+
+type Type implements Node {
+    # id
+    id: ID!
+    #
+    name: String!
+}
+
+# interfaces
+interface Node {
+    # the node id; for relay
+    id: ID!
+}
+
+interface Class implements Node {
+    # the node id
+    id: ID!
+    # spec
+    name: String!
+    bases: [Class!]
+    # the docstring
+    docstring: [String!]!
+}
+
+
+# end of file
