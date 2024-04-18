@@ -10,7 +10,10 @@ import re
 import signal
 
 # support
+import smith
 import journal
+
+import smith.shells
 
 # the query handler
 from .GraphQL import GraphQL
@@ -106,7 +109,6 @@ class Dispatcher:
         """
         # form the uri
         uri = f"/ux{request.url}"
-        print(uri)
         # open the document and serve it
         return server.documents.File(uri=uri, server=server, application=plexus)
 
