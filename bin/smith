@@ -6,4 +6,37 @@
 # (c) 1998-2024 all rights reserved
 
 
+# journal channel management
+import journal
+
+# errors
+journal.error("smith.ux.dispatch").fatal = False
+# debug
+# journal.debug("pyre.http").active = False
+# journal.debug("smith.ux").active = False
+# firewalls
+journal.firewall("smith.ux.dispatch").fatal = False
+
+# get the package
+import smith
+
+# attempt to
+try:
+    # build an app instance
+    app = smith.shells.smith(name="smith.app")
+    # and invoke it
+    status = app.run()
+# if something goes wrong while configuring the application and its parts
+except smith.shells.smith.ConfigurationError:
+    # the error must have been reported already; bail
+    raise SystemExit(1)
+# if the application reports an error through the journal
+except journal.ApplicationError:
+    # we already have a report; bail
+    raise SystemExit(1)
+
+# if all goes well, pass the app exit status on to the shell
+raise SystemExit(status)
+
+
 # end of file
