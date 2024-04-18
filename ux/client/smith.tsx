@@ -10,9 +10,10 @@ import { BrowserRouter } from 'react-router-dom'
 
 // local
 import { Provider } from './relay'
+import { ErrorBoundary } from './boundary'
 
 // the app
-export const Smith: React.FC = () => {
+export const Smith = () => {
     // a bit of complexity arises from the fact that we have to support
     // the following hosting use cases
 
@@ -22,9 +23,9 @@ export const Smith: React.FC = () => {
 
     // - hosting as a embedded app in an existing document structure
     //   an example of which is the NISAR on-demand system, where the url seen by the user,
-    //   e.g. https://<host>/ondemand/user/<username>/qed, is forwarded to the qed server port
-    // in order to support these use cases, we require that the embedding url ends in "qed/"
-    const regex = /^(?<base>.*\/qed\/).*/
+    //   e.g. https://<host>/ondemand/user/<username>/smith, is forwarded to the smith server port
+    // in order to support these use cases, we require that the embedding url ends in "smith/"
+    const regex = /^(?<base>.*\/smith\/).*/
     // run the current location through it
     const match = location.pathname.match(regex)
     // deduce the base url
@@ -33,8 +34,10 @@ export const Smith: React.FC = () => {
     // render
     return (
         <Provider>
-            <BrowserRouter basename={base}>
-            </BrowserRouter>
+            <ErrorBoundary>
+                <BrowserRouter basename={base}>
+                </BrowserRouter>
+            </ErrorBoundary>
         </Provider>
     )
 }
