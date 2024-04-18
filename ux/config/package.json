@@ -31,6 +31,7 @@
         "webpack": "latest",
         "webpack-cli": "latest",
         "@types/react": "latest",
+        "@types/react-dom": "latest",
         "@types/react-relay": "latest",
         "@mdx-js/loader": "latest"
     },
