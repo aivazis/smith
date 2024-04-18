@@ -20,7 +20,7 @@ const generatedDir = path.join(rootDir, 'generated')
 module.exports = {
     // the main entry point
     entry: {
-        smith: path.join(sourceDir, "smith.ts"),
+        smith: path.join(sourceDir, "main.tsx"),
     },
 
     // the build product
