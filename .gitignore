@@ -1,0 +1,18 @@
+# ignore rules
+
+# emacs backup files
+*~
+
+# the default build locations (mm)
+/builds
+/products
+# the default build locations (cmake)
+/build
+
+# mac folder attributes 
+**.DS_Store
+
+# python cache; for the careless ones that run python in the source directories...
+**__pycache__
+
+# end of file
