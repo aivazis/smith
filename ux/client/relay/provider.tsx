@@ -11,7 +11,8 @@ import { RelayEnvironmentProvider } from 'react-relay'
 // local
 import { createEnvironment } from './environment'
 // types
-type Provider_t = (props: { children: React.ReactNode }) => React.ReactElement
+type ProviderProps_t = { children: React.ReactNode }
+type Provider_t = ({ children }: ProviderProps_t) => React.ReactElement
 
 // the relay environment provider
 export const Provider: Provider_t = ({ children }) => {
