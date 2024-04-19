@@ -1,6 +1,6 @@
 {
     "name": "smith",
-    "version": "0.9.1",
+    "version": "0.0.1",
     "description": "a visualization environment for large raster data",
     "license": "BSD-2-Clause",
     "repository": "https://github.com/aivazis/smith",
@@ -37,10 +37,9 @@
     },
     "dependencies": {
         "graphql": "latest",
-        "lazysizes": "latest",
         "lodash": "latest",
         "path-browserify": "latest",
-        "react": "18.2.0",
+        "react": "latest",
         "react-dom": "latest",
         "react-relay": "latest",
         "react-router": "latest",
