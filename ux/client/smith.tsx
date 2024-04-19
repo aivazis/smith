@@ -11,19 +11,21 @@ import { BrowserRouter } from 'react-router-dom'
 // local
 import { Provider } from './relay'
 import { ErrorBoundary } from './boundary'
+import { Layout } from './routes'
 
 // the app
 export const Smith = () => {
     // a bit of complexity arises from the fact that we have to support
     // the following hosting use cases
-
+    //
     // - hosting on the local machine at some port:
     //   users run the server, it grabs a port on its host and browsers connect directly
     //   using host:port
-
-    // - hosting as a embedded app in an existing document structure
+    //
+    // - hosting as an embedded app in an existing document structure
     //   an example of which is the NISAR on-demand system, where the url seen by the user,
     //   e.g. https://<host>/ondemand/user/<username>/smith, is forwarded to the smith server port
+
     // in order to support these use cases, we require that the embedding url ends in "smith/"
     const regex = /^(?<base>.*\/smith\/).*/
     // run the current location through it
@@ -36,6 +38,7 @@ export const Smith = () => {
         <Provider>
             <ErrorBoundary>
                 <BrowserRouter basename={base}>
+                    <Layout />
                 </BrowserRouter>
             </ErrorBoundary>
         </Provider>
