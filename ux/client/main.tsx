@@ -12,7 +12,7 @@ import { Smith } from './smith'
 
 
 // hunt down the anchor
-const anchor = ReactDOM.createRoot(document.getElementById('smith'))
+const anchor = ReactDOM.createRoot(document.getElementById('smith')!)
 // and render smith
 anchor.render(
     <React.StrictMode>
