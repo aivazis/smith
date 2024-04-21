@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "graphql": "latest",
+    "graphql-yoga": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-relay": "latest",
