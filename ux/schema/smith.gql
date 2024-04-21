@@ -14,7 +14,7 @@ schema {
 # queries
 type Query {
     # placeholder
-    project: [Component]!
+    smith: Smith
 }
 
 # mutations
@@ -25,6 +25,11 @@ type Mutation {
 
 
 # types
+type Smith implements Node {
+    # id
+    id: ID!
+}
+
 type Component implements Node & Class {
     # id
     id: ID!
