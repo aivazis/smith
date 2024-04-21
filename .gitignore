@@ -11,7 +11,7 @@
 
 # the link to the installed node modules so vscode can find them
 # until there is a better option
-/node_modules
+/ux/node_modules
 
 # mac folder attributes 
 **.DS_Store
