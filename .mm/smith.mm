@@ -7,14 +7,14 @@
 # smith consists of a python package
 smith.packages := smith.pkg
 # a ux bundle
-smith.webpack := smith.ux
+smith.vite := smith.ux
 # and tests
 smith.tests := smith.pkg.tests
 
 # load the packages
 include $(smith.packages)
 # the ux
-include $(smith.webpack)
+include $(smith.vite)
 # the test suites
 include $(smith.tests)
 

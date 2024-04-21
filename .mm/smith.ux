@@ -9,10 +9,7 @@
 smith.ux.root := ux/
 
 # the configuration files are at top lebel
-smith.ux.config :=
-
-# code chunks from external dependencies
-smith.ux.chunks := vendors-node_modules node_modules
+smith.ux.config.root :=
 
 
 # end of file
