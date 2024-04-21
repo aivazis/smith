@@ -7,12 +7,19 @@
 // external
 import React from 'react'
 
+// local
+import { Body } from './body'
+import { Panel } from './panel'
+import { Status } from './status'
 
 // the page
 export const Page = () => {
     // render
     return (
-        <>Hello world!</>
+        <Body>
+            <Panel />
+            <Status />
+        </Body>
     )
 }
 

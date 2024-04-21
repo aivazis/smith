@@ -8,6 +8,8 @@
 import React from 'react'
 
 // local
+// components
+import { Theme } from './theme'
 import { Page } from './+page'
 
 
@@ -15,7 +17,9 @@ import { Page } from './+page'
 export const Layout = () => {
     // render
     return (
-        <Page />
+        <Theme>
+            <Page />
+        </Theme>
     )
 }
 
