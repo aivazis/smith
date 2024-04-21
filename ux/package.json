@@ -1,50 +1,35 @@
 {
-    "name": "smith",
-    "version": "0.0.1",
-    "description": "a visualization environment for large raster data",
-    "license": "BSD-2-Clause",
-    "repository": "https://github.com/aivazis/smith",
-    "author": "Michael Aivazis <michael.aivazis@para-sim.com>",
-    "scripts": {
-        "build": "webpack --mode development",
-        "dev": "webpack --mode development",
-        "relay": "relay-compiler"
-    },
-    "relay": {
-        "src": "./client",
-        "artifactDirectory": "./generated",
-        "schema": "./schema/smith.gql",
-        "language": "typescript"
-    },
-    "devDependencies": {
-        "@babel/core": "latest",
-        "@babel/preset-env": "latest",
-        "@babel/preset-react": "latest",
-        "@babel/preset-typescript": "latest",
-        "@babel/plugin-proposal-export-default-from": "latest",
-        "babel-loader": "latest",
-        "babel-plugin-relay": "latest",
-        "babel-plugin-styled-components": "latest",
-        "html-webpack-plugin": "latest",
-        "relay-compiler": "latest",
-        "ts-loader": "latest",
-        "typescript": "latest",
-        "webpack": "latest",
-        "webpack-cli": "latest",
-        "@types/react": "latest",
-        "@types/react-dom": "latest",
-        "@types/react-relay": "latest",
-        "@mdx-js/loader": "latest"
-    },
-    "dependencies": {
-        "graphql": "latest",
-        "lodash": "latest",
-        "path-browserify": "latest",
-        "react": "latest",
-        "react-dom": "latest",
-        "react-relay": "latest",
-        "react-router": "latest",
-        "react-router-dom": "latest",
-        "regenerator-runtime": "latest"
-    }
+  "name": "vitesse",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest",
+    "react-relay": "latest",
+    "react-router": "latest",
+    "react-router-dom": "latest",
+    "styled-components": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-relay": "latest",
+    "@types/react-router": "latest",
+    "@types/react-router-dom": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "@vitejs/plugin-react": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "eslint-plugin-react-refresh": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  }
 }

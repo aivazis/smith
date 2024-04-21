@@ -1,35 +1,40 @@
+// -*- jsonc -*-
 {
-    "compilerOptions": {
-        "target": "ESNext",
-        "useDefineForClassFields": true,
-        "lib": [
-            "ES2020",
-            "DOM",
-            "DOM.Iterable"
-        ],
-        "module": "ESNext",
-        "skipLibCheck": true,
-        "moduleResolution": "bundler",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "react",
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true,
-        "outDir": "./build",
-        "baseUrl": "./",
-        "paths": {
-            "~/*": [
-                "./client/*"
-            ],
-            "generated/*": [
-                "generated/*"
-            ]
-        }
-    },
-    "include": [
-        "client",
-        "generated"
-    ]
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    // bundler mode
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    // linting
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    // paths
+    "paths": {
+      "~/*": [
+        "./smith/*"
+      ]
+    }
+  },
+  "include": [
+    "./smith"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }
