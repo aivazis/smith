@@ -23,7 +23,7 @@ from .Mutation import Mutation
 schema = graphene.Schema(
     # supported operations
     query=Query,
-    mutation=Mutation,
+    # mutation=Mutation,
 )
 
 
